@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
                 input.setLayoutParams(lp);
+                input.setHint("Enter text");
                 builder.setView(input);
 
                 builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         EditText editTextView = (EditText) dialogLayout.findViewById(R.id.cad_edittext);
                         String textEntered = editTextView.getText().toString().trim();
+                        if (TextUtils.isEmpty(textEntered)){
+                            textEntered = "blank";
+                        }
                         displayTextView.setText("Text entered: " + textEntered);
                         dialog.dismiss();
                     }
@@ -117,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         EditText editText = (EditText) dialog.findViewById(R.id.custom_dialog_edittext);
                         String textEntered = editText.getText().toString().trim();
+                        if (TextUtils.isEmpty(textEntered)){
+                            textEntered = "blank";
+                        }
                         displayTextView.setText("Number entered: " + textEntered);
                         dialog.dismiss();
                     }
