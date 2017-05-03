@@ -14,6 +14,7 @@ import com.example.android.draddest.countryinfo.utilities.NetworkUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,7 +62,20 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String searchResults) {
-            mSearchResultsTextView.setText(searchResults);
+            List<Country> countries = NetworkUtils.extractFeatureFromJson(searchResults);
+            int numberOfCountries = countries.size();
+            Country firstCountry = countries.get(0);
+            String countryName = firstCountry.getName();
+            String currencyCode = firstCountry.getCurrencyCode();
+            String currencySymbol = firstCountry.getCurrencySymbol();
+            String languageName = firstCountry.getLanguage();
+
+            String displayText = "Country name: " + countryName + "\n"
+                    + "Currency code: " + currencyCode + "\n"
+                    + "Currency symbol: " + currencySymbol + "\n"
+                    + "Language: " + languageName;
+            mSearchResultsTextView.setText("number of extracted countries: " + numberOfCountries
+                    + "\n" + "First country in the list" + "\n" + displayText);
         }
     }
 }
