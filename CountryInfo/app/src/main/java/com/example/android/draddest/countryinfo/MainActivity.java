@@ -3,12 +3,12 @@ package com.example.android.draddest.countryinfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.draddest.countryinfo.utilities.NetworkUtils;
 
@@ -18,9 +18,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CountryAdapter mCountryAdapter;
+    private RecyclerView mCountryRecyclerView;
+
     // member variables for views
     EditText mCountrySearchBox;
-    TextView mSearchResultsTextView;
+    //TextView mSearchResultsTextView;
     Button mSearchButton;
 
     @Override
@@ -30,8 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
         // find the views
         mCountrySearchBox = (EditText) findViewById(R.id.et_country_name);
-        mSearchResultsTextView = (TextView) findViewById(R.id.tv_search_result);
+        //mSearchResultsTextView = (TextView) findViewById(R.id.tv_search_result);
         mSearchButton = (Button) findViewById(R.id.search_button);
+
+        mCountryRecyclerView = (RecyclerView) findViewById(R.id.country_recycler_view);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mCountryRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        mCountryRecyclerView.setLayoutManager(linearLayoutManager);
+
+        // specify an adapter
+        mCountryAdapter = new CountryAdapter();
+        mCountryRecyclerView.setAdapter(mCountryAdapter);
+
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,19 +81,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String searchResults) {
             List<Country> countries = NetworkUtils.extractFeatureFromJson(searchResults);
-            int numberOfCountries = countries.size();
-            Country firstCountry = countries.get(0);
-            String countryName = firstCountry.getName();
-            String currencyCode = firstCountry.getCurrencyCode();
-            String currencySymbol = firstCountry.getCurrencySymbol();
-            String languageName = firstCountry.getLanguage();
-
-            String displayText = "Country name: " + countryName + "\n"
-                    + "Currency code: " + currencyCode + "\n"
-                    + "Currency symbol: " + currencySymbol + "\n"
-                    + "Language: " + languageName;
-            mSearchResultsTextView.setText("number of extracted countries: " + numberOfCountries
-                    + "\n" + "First country in the list" + "\n" + displayText);
+            mCountryAdapter.setCountryData(countries);
         }
     }
 }
