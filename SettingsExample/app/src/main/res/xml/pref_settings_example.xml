@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:summaryOff="Hidden"
+        android:summaryOn="Shown"
+        android:title="Show Button"
+        android:key="show_button">
+    </CheckBoxPreference>
+    <ListPreference
+        android:defaultValue="@string/pref_background_default_value"
+        android:entries="@array/pref_background_option_labels"
+        android:entryValues="@array/pref_background_option_values"
+        android:key="@string/pref_background_key"
+        android:title="@string/pref_background_label">
+    </ListPreference>
+    <EditTextPreference
+        android:key="edit_text_pref_key"
+        android:title="Display Text"
+        android:dialogTitle="Enter text to display"
+        android:inputType="textCapWords">
+    </EditTextPreference>
+</PreferenceScreen>

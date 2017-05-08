@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_background_option_labels">
+        <item>@string/pref_background_label_default</item>
+        <item>@string/pref_background_label_green</item>
+        <item>@string/pref_background_label_yellow</item>
+        <item>@string/pref_background_label_red</item>
+    </array>
+
+    <array name="pref_background_option_values">
+        <item>@string/pref_background_default_value</item>
+        <item>@string/pref_background_green_value</item>
+        <item>@string/pref_background_yellow_value</item>
+        <item>@string/pref_background_red_value</item>
+    </array>
+
+</resources>

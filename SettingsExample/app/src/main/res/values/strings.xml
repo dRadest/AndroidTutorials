@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SettingsEcample</string>
+
+    <string name="pref_background_label">Background</string>
+    <string name="pref_background_label_default">Default</string>
+    <string name="pref_background_label_green">Green</string>
+    <string name="pref_background_label_yellow">Yellow</string>
+    <string name="pref_background_label_red">Red</string>
+
+    <string name="pref_background_key">background_key</string>
+
+    <string name="pref_background_default_value">default</string>
+    <string name="pref_background_green_value">green</string>
+    <string name="pref_background_yellow_value">yellow</string>
+    <string name="pref_background_red_value">red</string>
+
+
+
+</resources>
