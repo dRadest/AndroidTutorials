@@ -18,6 +18,12 @@ public class IncrementCountIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        MainActivity.incrementCount();
+        if (intent.getAction().equals(MainActivity.ACTION_INCREMENT_COUNT)){
+            MainActivity.incrementCount();
+            // we add this call so notification gets dismissed after we increment the count
+            MainActivity.clearAllNotifications();
+        } else if (intent.getAction().equals(MainActivity.ACTION_DISMISS_NOTIFICATION)){
+            MainActivity.clearAllNotifications();
+        }
     }
 }
