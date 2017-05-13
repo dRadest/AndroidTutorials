@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Start Service Example</string>
+
+    <!--quantity strings -->
+    <plurals name="service_started_count">
+        <item quantity="zero">Button clicked: %d times</item>
+        <item quantity="one">Button clicked: %d time</item>
+        <item quantity="other">Button clicked: %d times</item>
+    </plurals>
 </resources>

@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity
     private void updateView(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         mCountServiceCalled = prefs.getInt(SERVICE_CALLED_PREF_KEY, 0);
-        String textToDisplay = "Button clicked: " + mCountServiceCalled + " times";
+        String textToDisplay = getResources().getQuantityString(R.plurals.service_started_count,
+                mCountServiceCalled, mCountServiceCalled);
         mDisplayTextView.setText(textToDisplay);
     }
 
