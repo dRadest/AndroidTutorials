@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_event_seat_black_24dp"
+            android:tint="@color/button_grey"
+            android:title="One"
+            android:id="@+id/first_drawer_item"/>
+        <item
+            android:icon="@drawable/ic_star_black_24dp"
+            android:tint="@color/button_grey"
+            android:title="Two"
+            android:id="@+id/second_drawer_item"/>
+        <item
+            android:icon="@drawable/ic_laptop_mac_black_24dp"
+            android:tint="@color/button_grey"
+            android:title="Three"
+            android:id="@+id/third_drawer_item"/>
+    </group>
+
+</menu>
