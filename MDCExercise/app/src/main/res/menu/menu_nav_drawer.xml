@@ -17,5 +17,4 @@
             android:title="Three"
             android:id="@+id/third_drawer_item"/>
     </group>
-
 </menu>
