@@ -8,14 +8,25 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.android.draddest.mdcexercise.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:padding="16dp"
-        android:text="Hello World!"
-        android:textSize="16sp"
-        android:textStyle="bold|italic" />
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:id="@+id/recycler_view"
+        android:layout_marginTop="?attr/actionBarSize">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fontFamily="sans-serif"-->
+        <!--android:padding="16dp"-->
+        <!--android:text="Hello World!"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textStyle="bold|italic" />-->
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
