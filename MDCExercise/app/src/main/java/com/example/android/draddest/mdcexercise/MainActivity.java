@@ -2,7 +2,9 @@ package com.example.android.draddest.mdcexercise;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -83,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+
+        // setting up the floating action button
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Have a snack!",
+                        Snackbar.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
