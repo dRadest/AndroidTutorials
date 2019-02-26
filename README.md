@@ -1,6 +1,6 @@
 # AndroidTutorials
 
-Projects referred to on my [blog](https://dradest.wordpress.com/blog/)
+Projects referred to on my [blog](http://dradest.com/blog/category/android-tutorials/)
 
 Check the README file of each project for a link to blocgpost providing details about it
 
