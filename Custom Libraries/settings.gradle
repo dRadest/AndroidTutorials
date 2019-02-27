@@ -1,1 +1,1 @@
-include ':app', ':answerlibrary'
+include ':app', ':answerlibrary', ':aarapplication'
